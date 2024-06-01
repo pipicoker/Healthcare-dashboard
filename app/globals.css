@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -24,6 +26,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+
 }
 
 @layer utilities {
@@ -31,3 +34,29 @@ body {
     text-wrap: balance;
   }
 }
+
+
+::-webkit-scrollbar{
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #E3E4E6;
+  border-radius: 3px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: #072635;
+  height: 20px;
+  border-radius: 3px;
+}
+
+
+
+/* For Firefox */
+/* * {
+  scrollbar-width: thin;        
+  scrollbar-color: #072635 #E3E4E6 ;  
+} */
