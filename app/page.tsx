@@ -22,14 +22,18 @@ export default function Home() {
   useEffect(() => {
     const username = process.env.NEXT_PUBLIC_USERNAME;
     const password = process.env.NEXT_PUBLIC_PASSWORD;
-    const auth = Buffer.from(`${username}:${password}`).toString('base64');
+    // const auth = Buffer.from(`${username}:${password}`).toString('base64');
+
+    const auth = `Basic ${btoa(`${process.env.NEXT_PUBLIC_USERNAME}:${process.env.NEXT_PUBLIC_PASSWORD}`)}`
+
 
     const fetchData = async () => {
         try {
             const response = await fetch('https://fedskillstest.coalitiontechnologies.workers.dev', {
                 method: 'GET',
                 headers: {
-                    'Authorization': `Basic ${auth}`
+                    // 'Authorization': `Basic ${auth}`
+                    'Authorization': ` ${auth}`
                 }
             });
 
